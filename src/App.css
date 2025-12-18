@@ -11,7 +11,8 @@
 .card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  padding: 3rem 5rem;
+  padding: 2rem 3rem;
+  /* Reduced padding */
   border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -19,6 +20,22 @@
   animation: float 6s ease-in-out infinite;
   max-width: 600px;
   width: 90%;
+  max-height: 90vh;
+  /* Safety cap */
+  overflow-y: auto;
+  /* Allow internal scrolling if needed */
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+
+.card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
 }
 
 .card-wide {
@@ -27,43 +44,49 @@
 
 @keyframes float {
   0% {
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   50% {
-    transform: translateY(0px);
+    transform: translateY(-10px);
   }
 
+  /* Reduced float movement */
   100% {
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 }
 
 .title {
   font-family: var(--font-pretty);
-  font-size: 6rem;
+  font-size: clamp(3rem, 8vw, 6rem);
+  /* Fluid sizing */
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(to right, #fff, #f0e6ff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.1;
 }
 
 .title-sm {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  min-height: 2em;
-  /* Prevent layout shift */
+  margin-bottom: 1.5rem;
+  min-height: 1em;
+  /* Reduced min-height */
+}
+
+/* Reduced min-height */
 }
 
 .heart {
