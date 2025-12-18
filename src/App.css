@@ -152,6 +152,14 @@
     padding: 2rem 1rem;
     width: 95%;
     margin: 0 auto;
+    max-height: 85vh;
+    /* Ensure it fits vertically */
+    overflow-y: auto;
+    /* Scroll if content is too long */
+    display: flex;
+    /* Flex to handle content flow */
+    flex-direction: column;
+    justify-content: center;
   }
 
   .card-wide {
@@ -159,17 +167,23 @@
   }
 
   .button-group {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    /* Stack buttons on very narrow screens if needed, or keep row */
+    flex-wrap: wrap;
+    gap: 0.8rem;
     width: 100%;
     justify-content: center;
+    align-items: center;
   }
 
   .btn {
     padding: 0.8rem 1rem;
     font-size: 0.9rem;
-    white-space: nowrap;
+    white-space: normal;
+    /* Allow text wrap if needed */
+    width: 100%;
+    /* Full width buttons on mobile for better touch targets */
+    max-width: 300px;
   }
 
   .floating-sorry {
@@ -182,7 +196,7 @@
 
   .modal-content {
     padding: 1.5rem;
-    width: 90%;
+    width: 95%;
   }
 
   .tulip {
@@ -196,6 +210,21 @@
 
   .surprise-image {
     max-height: 40vh;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .title-sm {
+    font-size: 1.8rem;
+  }
+
+  .floating-sorry {
+    font-size: 2rem;
   }
 }
 
