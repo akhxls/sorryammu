@@ -9,7 +9,7 @@ function App() {
   const [pleadCount, setPleadCount] = useState(0)
   const [acceptCount, setAcceptCount] = useState(0)
   const [particles, setParticles] = useState([])
-  const [tulips, setTulips] = useState([])
+  /* Removed tulips state and logic as requested */
   const [showFlowerModal, setShowFlowerModal] = useState(false)
   const [showLoveModal, setShowLoveModal] = useState(false)
   const [showSecret, setShowSecret] = useState(false)
@@ -70,13 +70,7 @@ function App() {
 
   const handleFlowerAccept = () => {
     setShowFlowerModal(false)
-    // Bloom the garden after accepting
-    const newTulips = Array.from({ length: 15 }).map((_, i) => ({
-      id: Date.now() + i,
-      left: `${(i / 15) * 100}%`,
-      delay: Math.random() * 2
-    }))
-    setTulips(newTulips)
+    // Removed tulip blooming logic
   }
 
   const handleLoveAccept = () => {
@@ -176,19 +170,6 @@ function App() {
           {p.text}
         </div>
       ))}
-
-      {/* Tulip Garden */}
-      <div className="tulip-garden">
-        {tulips.map(t => (
-          <div
-            key={t.id}
-            className="tulip"
-            style={{ left: t.left, animationDelay: `${t.delay}s` }}
-          >
-            🌷
-          </div>
-        ))}
-      </div>
 
       <div className={`card ${accepted ? 'card-wide' : ''}`}>
         {!started ? (
