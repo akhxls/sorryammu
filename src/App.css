@@ -45,6 +45,7 @@
   font-weight: 700;
   margin-bottom: 1rem;
   background: linear-gradient(to right, #fff, #f0e6ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -133,13 +134,28 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .title {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+
+  .title-sm {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
   }
 
   .card {
-    padding: 2rem;
+    padding: 2rem 1rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .card-wide {
+    width: 95%;
   }
 
   .button-group {
@@ -151,8 +167,35 @@
   }
 
   .btn {
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1rem;
     font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .floating-sorry {
+    font-size: 3rem;
+  }
+
+  .giant-bouquet {
+    font-size: 5rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  .tulip {
+    font-size: 3rem;
+    bottom: -50px;
+  }
+
+  .floating-gift {
+    font-size: 3rem;
+  }
+
+  .surprise-image {
+    max-height: 40vh;
   }
 }
 
