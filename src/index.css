@@ -1,0 +1,47 @@
+:root {
+  --color-purple-deep: #240046;
+  --color-purple-mid: #5a189a;
+  --color-purple-light: #9d4edd;
+  --color-pink: #ff006e;
+  --font-body: 'Inter', sans-serif;
+  --font-pretty: 'Dancing Script', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--color-purple-deep), var(--color-purple-mid), var(--color-purple-light));
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
